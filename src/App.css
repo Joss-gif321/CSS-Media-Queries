@@ -1,0 +1,61 @@
+body {
+  background-color: lightgreen;
+}
+
+.botao-flutuante {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 56px;
+  height: 56px;
+  border: 0;
+  border-radius: 50%;
+  background-color: #222;
+  color: #fff;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 25%);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.botao-flutuante:hover {
+  background-color: #444;
+  transform: translateY(-3px);
+}
+
+.botao-flutuante:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .botao-flutuante {
+    right: 16px;
+    bottom: 16px;
+  }
+}
+
+.mensagem::after {
+  content: "Tela detectada: celular";
+}
+
+@media (min-width: 361px) and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+
+  .mensagem::after {
+    content: "Tela detectada: tablet";
+  }
+}
+
+@media (min-width: 601px) {
+  body {
+    background-color: plum;
+  }
+
+  .mensagem::after {
+    content: "Tela detectada: PC";
+  }
+}
